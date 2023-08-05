@@ -83,6 +83,7 @@ void loop() {
               if (first_udp_seq == true) {
                   Serial.print("UDP DATAGRAM: ");
                   first_udp_seq = false;
+                  digitalWrite(LED_PIN_INTERNAL, HIGH);
               }
             
               Serial.print(udp_seq[i]); Serial.print(" ");
@@ -90,6 +91,7 @@ void loop() {
 
           Serial.println(" ");
           first_udp_seq = true;
+          digitalWrite(LED_PIN_INTERNAL, LOW);
       }
     }
   }
